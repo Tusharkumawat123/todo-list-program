@@ -36,7 +36,7 @@ class Todo
         puts"###################### DELETE TODO ##################"
         delete_todo
       when 5
-        return 
+         break
       else
         puts 'invalid input'
     end
