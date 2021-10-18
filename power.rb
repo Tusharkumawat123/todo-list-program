@@ -14,5 +14,4 @@ Base = gets.chomp.to_i
 print "Enter the exponent value:"
 Expo = gets.chomp.to_i
 
-#Calling the Method
 puts "The power of the numbers is:#{pow( Base, Expo )}"
