@@ -23,7 +23,7 @@ class Calculator
 		@division=num1/num2
 	end
 end
-
+# driver logic
 cal=Calculator.new
 
 print "Enter the first number:"
