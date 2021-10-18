@@ -1,6 +1,4 @@
 class Calculator
-	
-	#create a sum method 
 	def sum(num1, num2)
 		@n1 = num1
 		@n2 = num2
@@ -29,19 +27,19 @@ class Calculator
 		puts @division
 	end
 end
-#Create object for Calculator class
+
 cal = Calculator.new
 
 puts "Enter the operation:\nType 'add' for Addition\nType 'subtract' for Diffrance\nType 'multiply' for Multiply\nType 'division' for division"
-#Take Opertaion from user 
 method =gets.chomp
+
 
 print "Enter the first number:"
 num1 =gets.chomp.to_i
 print "Enter the second number:"
 num2 =gets.chomp.to_i
 
-#apply if..else loop for particular codition
+
 if method == "add" or method == "Addition"
 	cal.sum(num1, num2)
 elsif method == "subtract" or method == "Subtract"
