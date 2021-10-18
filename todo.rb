@@ -1,9 +1,9 @@
 class Todo
-  attr_accessor :value, :todo_list
+  attr_accessor :value, :todo_list 
 
 	def initialize
-    @value = 0 
-    @todo_list = {'1': 'buy fruits', '2': 'go to market'}
+    @value = 0
+    @todo_list = { }
 	end
 
 	def self.display_menu
@@ -28,7 +28,7 @@ class Todo
         display_todo_list
       when 2
         puts "###################### YOUR TODO #########################"
-        enter_todo
+        enter_todo(@value)
       when 3
         puts "########################### UPDATE TODO LIST ######################"
         update_todolist
@@ -36,7 +36,7 @@ class Todo
         puts"###################### DELETE TODO ##################"
         delete_todo
       when 5
-         break
+         return 
       else
         puts 'invalid input'
     end
@@ -48,13 +48,12 @@ class Todo
     end
   end
 
-  def enter_todo
-     @todo_list[:buyfruits ]='apple,banana'
-     @todo_list[:gotomarket ]='WTP'
-     @todo_list.each do |v|
+  def enter_todo(todo_list)
+    @value
+    @todo_list.each do |k,v|
       puts "#{v}"
     end
-  end
+    end
 
   def update_todolist
      @todo_list[:'3']='make project'
@@ -76,3 +75,5 @@ end
 todo = Todo.new
 Todo::display_menu
 val = todo.user_input
+#num=gets.chomp.to_i
+todo.todo_list =gets.chomp.to_s
