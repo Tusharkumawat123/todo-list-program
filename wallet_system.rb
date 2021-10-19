@@ -1,39 +1,53 @@
 class User
-	#create initialize count variable
-	@@count = 0
+  attr_accessor :id, :name, :ac
+  @@list = []
 
-	def initialize (id,name,account_number)
-		 @id = id
-		 @name = name
-		 @account_number = account_number
-		@@count += 1
-	end
-	def id
-		puts "User id :#{@id}"
-	end
-	def name
-		puts "User name:#{@name}"
-	end
-	def account_number
-		puts "User account_number:#{@account_number}"
-	end
+  def initialize (id: 0, name: '', ac: nil)
+    @id = id
+    @name = name
+    @ac = ac
+  end
 
-def  self.printcount()
-		puts "user count is :#@@count"
-	end
+  # class methods
+  class << self
+    def count
+      @@list.count
+    end
+
+    def insert=(user)
+      @@list << user
+    end
+  end
+
+
 end
 
-id = gets.chomp.to_i
-name = gets.chomp.to_s
-account_number = gets.chomp.to_i
+# driver logic
+input = 0
+while true do
+  user_params = {}
+  puts "Enter id"
+  user_params[:id] = gets.chomp().to_i
 
-input = User.new id,name,account_number
-input.id
-input.name
-input.account_number
-User.printcount()
+  puts "Enter name"
+  user_params[:name] = gets.chomp()
 
-		
+  puts "Enter Account Number:"
+  user_params[:ac] = gets.chomp().to_i
+
+  user = User.new(user_params)
+
+  pp user
+
+  # inserting user into list
+  User.insert = user
+
+  puts User.count
+  input +=1
+  if input > 2
+    break
+    end
+end
 
 
 
