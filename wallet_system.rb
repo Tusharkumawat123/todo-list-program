@@ -1,5 +1,5 @@
 class User
-	#create initialize class variable
+	#create initialize count variable
 	@@count = 0
 
 	def initialize (id,name,account_number)
